@@ -750,8 +750,8 @@ function ideasCard(){
 // ================= sincronização (Supabase, criptografada no aparelho) =================
 // Sem usuário e senha: um código secreto do casal. Dele saem (1) o identificador da linha no banco, via SHA-256,
 // e (2) a chave AES-GCM que criptografa os dados antes de saírem do aparelho. O servidor nunca vê o código nem os dados.
-const SYNC_URL = '';   // ex.: https://abcdefgh.supabase.co
-const SYNC_KEY = '';   // chave pública do projeto (anon ou publishable)
+const SYNC_URL = 'https://cglsnoaxpsypyoucpfav.supabase.co';
+const SYNC_KEY = 'sb_publishable_p6RDOzg__NZV0RNN3o5EOQ_OMZJgjiS';   // chave publicável: feita para ficar no navegador
 const lsGet = k => { try { return localStorage.getItem(k); } catch (e) { return null; } };
 const lsSet = (k, v) => { try { if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) {} };
 const syncCfg = () => ({u:(lsGet('plano2:sburl') || SYNC_URL).replace(/\/+$/, ''), k:lsGet('plano2:sbkey') || SYNC_KEY});
